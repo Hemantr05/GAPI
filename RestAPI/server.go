@@ -25,7 +25,7 @@ type coasterHandlers struct{
     store map[string]Coaster
 }
 
-func (h *coasterHandlers) coasters(w http.ReponseWriter, r *http.Request){
+func (h *coasterHandlers) coasters(w http.ResponseWriter, r *http.Request){
     switch r.Method{
     case "GET":
         h.get(w, r)
@@ -43,7 +43,7 @@ func (h *coasterHandlers) coasters(w http.ReponseWriter, r *http.Request){
 func (h *coasterHandlers) get(w http.ResponseWriter, r *http.Request){
     coasters := make([]Coaster, len(h.store))
 
-    h.lock()
+    h.Lock()
     i := 0
     for _ , coaster := range h.store {
         coasters[i] = coaster
@@ -151,7 +151,7 @@ func (h *coasterHandlers) post(w http.ResponseWriter, r *http.Request) {
 
 func newCoasterHandlers() *coasterHandlers{
     return &coasterHandlers{
-        store: map[string]Coasters{},
+        store: map[string]Coaster{},
     }
 }
 
@@ -182,7 +182,7 @@ func main(){
     admin := newAdminPortal()
     coasterHandlers := newCoasterHandlers()
     http.HandleFunc("/coasters", coasterHandlers.coasters)
-    http.HandleFunc("/coasters/", coasterHandles.getCoaster)
+    http.HandleFunc("/coasters/", coasterHandlers.getCoaster)
     http.HandleFunc("/admin",admin.handler)
     err := http.ListenAndServer(":3000", nil)
     if err != nil{
