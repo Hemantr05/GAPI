@@ -183,7 +183,7 @@ func main(){
     coasterHandlers := newCoasterHandlers()
     http.HandleFunc("/coasters", coasterHandlers.coasters)
     http.HandleFunc("/coasters/", coasterHandles.getCoaster)
-    http.HandleFunc("/admin",admin.handle)
+    http.HandleFunc("/admin",admin.handler)
     err := http.ListenAndServer(":3000", nil)
     if err != nil{
         panic(err)
