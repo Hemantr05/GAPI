@@ -30,7 +30,7 @@ func (h *coasterHandlers) coasters(w http.ReponseWriter, r *http.Request){
     case "GET":
         h.get(w, r)
         return
-    case "GET":
+    case "POST":
         h.post(w, r)
         return
     default:
