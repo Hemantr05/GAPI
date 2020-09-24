@@ -60,7 +60,7 @@ func (h *coasterHandlers) get(w http.ResponseWriter, r *http.Request){
 
     w.Header().Add("content-type", "application/json")
     w.WriteHeader(http.StatusOK)
-    w.Writer(jsonBytes)
+    w.Write(jsonBytes)
 }
 
 
