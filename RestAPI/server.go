@@ -181,7 +181,7 @@ func (a adminPortal) handler(w http.ResponseWriter, r* http.Request){
 func main(){
     admin := newAdminPortal()
     coasterHandlers := newCoasterHandlers()
-    http.HandlerFunc("/coasters", coasterHandlers.coasters)
+    http.HandleFunc("/coasters", coasterHandlers.coasters)
     http.HandleFunc("/coasters/", coasterHandles.getCoaster)
     http.HandleFunc("/admin",admin.handle)
     err := http.ListenAndServer(":3000", nil)
