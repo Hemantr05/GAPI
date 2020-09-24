@@ -28,6 +28,4 @@ it must create a RestAPI build file
 
 Execute the below:
 
-1. `bash run.sh  or
-
-2. `./run.sh`
+`bash run.sh` or `./run.sh`
