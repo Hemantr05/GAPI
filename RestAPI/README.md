@@ -21,3 +21,13 @@ it must create a RestAPI build file
 3. type in new terminal window 
 
 `curl http://localhost:3000/coaster`
+
+
+
+### Or
+
+Execute the below:
+
+1. `bash run.sh  or
+
+2. `./run.sh`
