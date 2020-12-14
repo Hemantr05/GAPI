@@ -1,1 +1,1 @@
-# GAPI - APIs developed in Golang
+# GoAPI - APIs developed in Golang
